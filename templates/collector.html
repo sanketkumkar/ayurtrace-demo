@@ -1,0 +1,13 @@
+<h2>Collector Portal</h2>
+<form method="POST">
+  Species: <input type="text" name="species" required><br>
+  GPS Location: <input type="text" name="gps" placeholder="lat,long"><br>
+  Weight (kg): <input type="number" step="0.1" name="weight"><br>
+  <button class="btn btn-primary mt-2" type="submit">Submit</button>
+</form>
+
+{% if qr_path %}
+  <h3>QR Generated:</h3>
+  <img src="/{{ qr_path }}" width="200">
+  <p><a href="{{ link }}">{{ link }}</a></p>
+{% endif %}
