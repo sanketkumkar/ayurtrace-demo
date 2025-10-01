@@ -1,0 +1,15 @@
+<h2>Consumer Provenance</h2>
+{% if collection %}
+  <p><b>Species:</b> {{collection.species}}</p>
+  <p><b>GPS:</b> {{collection.gps}}</p>
+  <p><b>Weight:</b> {{collection.weight}} kg</p>
+  <p><b>Harvested:</b> {{collection.timestamp}}</p>
+  <h4>Lab Tests:</h4>
+  <ul>
+    {% for t in tests %}
+      <li>Moisture: {{t.moisture}}% | DNA: {{t.dna_auth}} | Pesticide: {{t.pesticide}} | {{t.timestamp}}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No data found</p>
+{% endif %}
